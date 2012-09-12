@@ -1,0 +1,3 @@
+[submodule "stmlib"]
+	path = stmlib
+	url = git@github.com:pichenettes/stmlib.git
