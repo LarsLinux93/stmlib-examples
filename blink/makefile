@@ -31,7 +31,7 @@ MEMORY_MODE    = flash
 # USB            = enabled
 
 # Preferred upload command
-UPLOAD_COMMAND  = upload_jtag
+UPLOAD_COMMAND  = upload_serial
 
 # Packages to build
 TARGET         = blink

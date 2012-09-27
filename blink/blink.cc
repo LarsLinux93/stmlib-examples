@@ -45,9 +45,9 @@ void SysTick_Handler() {
   
   led_status = !led_status;
   if (led_status) {
-    GPIO_SetBits(GPIOB, GPIO_Pin_7);
+    GPIO_SetBits(GPIOA, GPIO_Pin_5);
   } else {
-    GPIO_ResetBits(GPIOB, GPIO_Pin_7);
+    GPIO_ResetBits(GPIOA, GPIO_Pin_5);
   }
 }
   
@@ -55,13 +55,13 @@ void SysTick_Handler() {
 
 void Init() {
   SystemInit();
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
       
   GPIO_InitTypeDef gpio_init;
-  gpio_init.GPIO_Pin = GPIO_Pin_7;
+  gpio_init.GPIO_Pin = GPIO_Pin_5;
   gpio_init.GPIO_Speed = GPIO_Speed_10MHz;
   gpio_init.GPIO_Mode = GPIO_Mode_Out_PP;
-  GPIO_Init(GPIOB, &gpio_init);
+  GPIO_Init(GPIOA, &gpio_init);
   
   SysTick_Config(F_CPU / 8);
 }
