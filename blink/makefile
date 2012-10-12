@@ -27,7 +27,6 @@ F_CRYSTAL      = 8000000L
 F_CPU          = 72000000L
 SYSCLOCK       = SYSCLK_FREQ_72MHz
 DENSITY        = md
-MEMORY_MODE    = flash
 # USB            = enabled
 
 # Preferred upload command
