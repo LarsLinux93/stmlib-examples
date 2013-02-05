@@ -24,17 +24,16 @@
 
 # System specifications
 F_CRYSTAL      = 8000000L
-F_CPU          = 72000000L
-SYSCLOCK       = SYSCLK_FREQ_72MHz
-FAMILY         = f10x
-DENSITY        = md
+F_CPU          = 168000000L
+SYSCLOCK       = SYSCLK_FREQ_168MHz
+FAMILY         = f4xx
 # USB            = enabled
 
 # Preferred upload command
 UPLOAD_COMMAND  = upload_serial
 
 # Packages to build
-TARGET         = blink
-PACKAGES       = blink
+TARGET         = blink-f4
+PACKAGES       = blink-f4
 
 include stmlib/makefile.inc
