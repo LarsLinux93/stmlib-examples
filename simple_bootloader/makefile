@@ -26,6 +26,7 @@
 F_CRYSTAL      = 8000000L
 F_CPU          = 72000000L
 SYSCLOCK       = SYSCLK_FREQ_72MHz
+FAMILY         = f10x
 DENSITY        = md
 # USB            = enabled
 

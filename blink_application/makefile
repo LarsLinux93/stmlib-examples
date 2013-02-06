@@ -26,6 +26,7 @@
 F_CRYSTAL      = 8000000L
 F_CPU          = 72000000L
 SYSCLOCK       = SYSCLK_FREQ_72MHz
+FAMILY         = f10x
 DENSITY        = md
 # This flag indicates that the code should be built with a startup address at
 # 0x08004000 instead of 0x08000000. The first 0x4000 bytes are reserved for the
