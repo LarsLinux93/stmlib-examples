@@ -30,10 +30,10 @@ FAMILY         = f4xx
 # USB            = enabled
 
 # Preferred upload command
-UPLOAD_COMMAND  = upload_serial
+UPLOAD_COMMAND  = upload_jtag
 
 # Packages to build
-TARGET         = blink-f4
-PACKAGES       = blink-f4
+TARGET         = blink_f4
+PACKAGES       = blink_f4
 
 include stmlib/makefile.inc
