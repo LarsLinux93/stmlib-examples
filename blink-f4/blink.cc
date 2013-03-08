@@ -27,34 +27,26 @@
 // Default interrupt handlers.
 extern "C" {
 
+void NMI_Handler() { }
 void HardFault_Handler() { while (1); }
 void MemManage_Handler() { while (1); }
 void BusFault_Handler() { while (1); }
 void UsageFault_Handler() { while (1); }
-void NMI_Handler() { }
 void SVC_Handler() { }
 void DebugMon_Handler() { }
 void PendSV_Handler() { }
-void SysTick_Handler() { }
-
-}
-
-/*
-extern "C" {
-
 void SysTick_Handler() {
   static bool led_status;
   
   led_status = !led_status;
   if (led_status) {
-    GPIO_SetBits(GPIOA, GPIO_Pin_0);
+    GPIO_SetBits(GPIOA, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
   } else {
-    GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+    GPIO_ResetBits(GPIOA, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
   }
 }
 
 }
-*/
 
 void Init() {
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
@@ -67,7 +59,7 @@ void Init() {
   gpio_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOA, &gpio_init);
   GPIO_SetBits(GPIOA, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
-  //SysTick_Config(F_CPU / 8);
+  SysTick_Config(F_CPU / 8);
 }
 
 int main(void) {

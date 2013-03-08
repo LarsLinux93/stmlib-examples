@@ -31,7 +31,7 @@ DENSITY        = md
 # USB            = enabled
 
 # Preferred upload command
-UPLOAD_COMMAND  = upload_serial
+UPLOAD_COMMAND  = upload_jtag
 
 # Packages to build
 TARGET         = blink
