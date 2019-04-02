@@ -1,10 +1,10 @@
 Mutable Instruments' test projects and example code for the  STM32F libraries.
 
-Except when noted otherwise, all code is copyright Olivier Gillet
-(ol.gillet@gmail.com) and is released under the MIT License with the following
+Except when noted otherwise, all code is copyright Emilie Gillet
+(emilie.o.gillet@gmail.com) and is released under the MIT License with the following
 notice:
 
-Copyright 2012 Olivier Gillet.
+Copyright 2012 Emilie Gillet.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
