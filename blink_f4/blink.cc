@@ -41,10 +41,11 @@ void PendSV_Handler() { }
 extern "C" {
 
 void SysTick_Handler() {
-  static uint8_t divider = 0;
-  static bool led_status = false;
-  
-  if ((++divider) == 0) {
+  static float counter = 0.0f;
+  static bool led_status;
+
+  counter += 0.004f;
+  if (counter >= 1.0f) {
     if (led_status) {
       GPIO_SetBits(GPIOA, GPIO_Pin_1);
       led_status = false;
@@ -52,6 +53,7 @@ void SysTick_Handler() {
       GPIO_ResetBits(GPIOA, GPIO_Pin_1);
       led_status = true;
     }
+    counter = 0.0f;
   }
 }
 
@@ -68,7 +70,7 @@ void Init() {
   gpio_init.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOA, &gpio_init);
   GPIO_SetBits(GPIOA, GPIO_Pin_0 | GPIO_Pin_2);
-  SysTick_Config(F_CPU / 1024);
+  SysTick_Config(F_CPU / 1000);
 }
 
 int main(void) {
